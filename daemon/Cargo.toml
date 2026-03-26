@@ -1,0 +1,72 @@
+[package]
+name = "omny-daemon"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "omny_daemon"
+path = "src/lib.rs"
+
+[[bin]]
+name = "omny-daemon"
+path = "src/main.rs"
+
+[dependencies]
+# IPC protocol types
+omny-client = { path = "../client" }
+
+# Omnibus runtime (brings in crown, globe transitively)
+omnibus = { path = "../../../Omninet/World/Digital/Omnibus", default-features = false }
+
+# Tower — always-on network node (wraps Omnibus with gospel peering, search, content policy)
+tower = { path = "../../../Omninet/World/Digital/Tower" }
+
+# Globe — needed for OmniEvent deserialization in network.publish
+globe = { path = "../../../Omninet/Globe", default-features = false }
+
+# Equipment — the nervous system (Phone, Email, Contacts, Pager, Communicator)
+equipment = { path = "../../../Omninet/Equipment" }
+
+# Content pipeline — Ideas, Vault, Hall, Sentinal
+ideas = { path = "../../../Omninet/Ideas" }
+vault = { path = "../../../Omninet/Vault" }
+hall = { path = "../../../Omninet/Hall" }
+sentinal = { path = "../../../Omninet/Sentinal" }
+
+# Cross-cutting concerns for modifier chain
+polity = { path = "../../../Omninet/Polity" }
+yoke = { path = "../../../Omninet/Yoke" }
+x = { path = "../../../Omninet/X" }
+
+# Serialization
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+base64 = "0.22"
+
+# Used by Ideas/Vault for entry creation
+uuid = { version = "1", features = ["v4"] }
+chrono = { version = "0.4", features = ["serde"] }
+
+# Config file
+toml = "0.8"
+
+# Logging
+log = "0.4"
+env_logger = "0.11"
+
+# Async broadcast receiver
+tokio = { version = "1", features = ["sync"] }
+
+# Signal handling
+ctrlc = "3"
+
+# Peer credential lookup (Unix domain sockets)
+[target.'cfg(unix)'.dependencies]
+libc = "0.2"
+
+# Named pipe support
+[target.'cfg(windows)'.dependencies]
+windows-sys = { version = "0.59", features = ["Win32_Foundation", "Win32_Storage_FileSystem", "Win32_System_Pipes", "Win32_Security"] }
+
+[dev-dependencies]
+tempfile = "3"

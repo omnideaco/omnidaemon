@@ -1,0 +1,17 @@
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Claude Code
+.claude/
+
+# Editors
+*.swp
+*.swo
+
+# Environment / secrets
+.env
+.env.*
+
+# Rust
+target/
