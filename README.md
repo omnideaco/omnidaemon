@@ -1,4 +1,4 @@
-> **[Omnidea](https://github.com/omnideaco/omnidea)** / **[Omny](https://github.com/omnideaco/omny)** / **Omnidaemon** · For AI-assisted development, see [CLAUDE.md](../CLAUDE.md).
+> **[Omnidea](https://github.com/omnideaco/omnidea)** / **[Omny](https://github.com/omnideaco/omny)** / **Omnidaemon** · For AI-assisted development, see [Omny CLAUDE.md](https://github.com/omnideaco/omny/blob/main/CLAUDE.md).
 
 # omnidaemon
 
