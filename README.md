@@ -2,6 +2,8 @@
 
 # omnidaemon
 
+[![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL--3.0-blue.svg)](LICENSE.md) [![GitHub Stars](https://img.shields.io/github/stars/omnideaco/omnidaemon)](https://github.com/omnideaco/omnidaemon/stargazers) [![Governed by the Covenant](https://img.shields.io/badge/Governed_by-The_Covenant-gold.svg)](https://github.com/omnideaco/covenant) ![Rust](https://img.shields.io/badge/Rust-000000?logo=rust&logoColor=white)
+
 Part of [Omnidea](https://github.com/omnideaco/omnidea). For the full stack: `git clone --recursive https://github.com/omnideaco/omnidea.git`
 
 The single source of truth for all Omninet operations. A headless Rust service that owns identity (Crown), storage (Vault), networking (Omnibus/Tower), and the operation pipeline (Equipment). Every client -- the browser, the tray, CLI tools, and TypeScript programs -- connects to this daemon over IPC rather than calling protocol crates directly.
