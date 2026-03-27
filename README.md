@@ -103,7 +103,7 @@ omny-daemon uninstall    # Remove platform autostart
 
 ## Building
 
-Requires [Omninet](https://github.com/omnideaco/Omninet) as a sibling directory -- the daemon depends on Omninet crates via path deps in `Cargo.toml`.
+Requires [Omninet](https://github.com/omnideaco/omninet) as a sibling directory -- the daemon depends on Omninet crates via path deps in `Cargo.toml`.
 
 ```bash
 # From the omnidaemon directory:
